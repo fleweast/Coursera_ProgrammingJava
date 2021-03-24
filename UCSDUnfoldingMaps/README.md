@@ -12,4 +12,4 @@ about it, and about the city as well.
 When you click on a city, you can see which earthquake affects it. The line will connect these earthquakes to the city,
 and also show the average magnitude from these earthquakes. For example, for Athens, Greece it will look like this:
 
-![alt text](2.PNG)
+![alt text](2.png)
