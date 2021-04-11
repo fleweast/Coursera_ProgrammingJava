@@ -1,37 +1,16 @@
 package document;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
-
-/** A class for timing the EfficientDocument and BasicDocument classes
- * 
- * @author UC San Diego Intermediate Programming MOOC team
- *
- */
 
 public class DocumentBenchmarking {
 
 	
 	public static void main(String [] args) {
-
-	    // Run each test more than once to get bigger numbers and less noise.
-	    // You can try playing around with this number.
-	    int trials = 100;
-
-	    // The text to test on
-	    String textfile = "data/warAndPeace.txt";
-		
-	    // The amount of characters to increment each step
-	    // You can play around with this
+	    int trials = 20;
+	    String textfile = "TextEditor/data/warAndPeace.txt";
 		int increment = 20000;
-
-		// The number of steps to run.  
-		// You can play around with this.
 		int numSteps = 20;
-		
-		// THe number of characters to start with. 
-		// You can play around with this.
 		int start = 50000;
 		
 		// TODO: Fill in the rest of this method so that it runs two loops
@@ -42,7 +21,7 @@ public class DocumentBenchmarking {
 		{
 			// numToCheck holds the number of characters that you should read from the 
 			// file to create both a BasicDocument and an EfficientDocument.  
-			
+
 			/* Each time through this loop you should:
 			 * 1. Print out numToCheck followed by a tab (\t) (NOT a newline)
 			 * 2. Read numToCheck characters from the file into a String
@@ -57,18 +36,32 @@ public class DocumentBenchmarking {
 			 *     b. Calls fleshScore on this document
 			 * 6. Print out the time it took to complete the loop in step 5 
 			 *      (on the same line as the first print statement) followed by a newline (\n) 
-			 */  
-			 
+			 */
+			System.out.print(numToCheck + "\t");
+			String strFromFIle = getStringFromFile(textfile, numToCheck);
+			int bdTime = 0;
+			for (int i = 0; i < trials; i++){
+				long startTime = System.nanoTime();
+				BasicDocument bd = new BasicDocument(strFromFIle);
+				bd.getFleschScore();
+				long finishTime = System.nanoTime();
+				bdTime += (finishTime - startTime)/100000;
+			}
+			System.out.print(bdTime/trials + "\t");
+			int edTime = 0;
+			for (int i = 0; i < trials; i++){
+				long startTime = System.nanoTime();
+				BasicDocument ed = new BasicDocument(strFromFIle);
+				ed.getFleschScore();
+				long finishTime = System.nanoTime();
+				edTime += (finishTime - startTime)/100000;
+			}
+			System.out.print(edTime/trials + "\n");
+
 		}
 	
 	}
-	
-	/** Get a specified number of characters from a text file
-	 * 
-	 * @param filename The file to read from
-	 * @param numChars The number of characters to read
-	 * @return The text string from the file with the appropriate number of characters
-	 */
+
 	public static String getStringFromFile(String filename, int numChars) {
 		
 		StringBuffer s = new StringBuffer();
