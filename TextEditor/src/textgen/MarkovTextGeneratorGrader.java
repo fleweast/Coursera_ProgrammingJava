@@ -1,5 +1,4 @@
 package textgen;
-
 import java.util.Random;
 import java.util.HashMap;
 import java.io.PrintWriter;
@@ -10,7 +9,6 @@ public class MarkovTextGeneratorGrader {
     public static void main(String[] args) {
         try {
             MarkovTextGenerator gen = new MarkovTextGeneratorLoL(new Random());
-            
             int incorrect = 0;
             int tests = 0;
             String feedback = "";
@@ -95,4 +93,5 @@ public class MarkovTextGeneratorGrader {
             System.out.println("Error during runtime: " + e);
         }
     }
+
 }
