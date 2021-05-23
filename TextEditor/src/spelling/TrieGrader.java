@@ -7,11 +7,9 @@ import java.util.List;
 public class TrieGrader {
     StringBuilder feedback;
 
-
     public TrieGrader() {
         feedback = new StringBuilder();
     }
-
 
     public static void main(String[] args) {
         TrieGrader g = new TrieGrader();
@@ -26,11 +24,8 @@ public class TrieGrader {
 
         try {
             AutoCompleteDictionaryTrie ac = new AutoCompleteDictionaryTrie();
-
             g.testAddWords(ac);
-
             g.testWordsInOut(ac);
-
             g.testPredictions(ac);
 
         } catch (Exception e) {
@@ -40,7 +35,6 @@ public class TrieGrader {
         }
 
         StringBuilder feedback = g.getFeedback();
-
 
         out.println(feedback.toString());
         out.close();
@@ -82,10 +76,7 @@ public class TrieGrader {
         ac.addWord("testbase");
         ac.addWord("testcases");
 
-
         feedback.append("Dict size is " + ac.size() + ".");
-
-        // get current size before trying to add duplicate word
 
         appendTestString(4,"Adding duplicate word...");
         feedback.append("Adding duplicate word returned " + ac.addWord("dog") + ".");
@@ -115,11 +106,8 @@ public class TrieGrader {
         appendTestString(10, "Testing for more words in dictionary...");
         feedback.append("'test' in dictionary: " + ac.isWord("test") + ". 'testcases' in dictionary: " + ac.isWord("testcases") + ". 'testone' in dictionary: " + ac.isWord("testone") + ".");
 
-
         appendTestString(11, "Testing word with capital letters...");
         feedback.append("'TeSt' in dictionary: " + ac.isWord("TeSt") + ".");
-
-
 
     }
 
@@ -186,7 +174,4 @@ public class TrieGrader {
     private StringBuilder getFeedback() {
         return this.feedback;
     }
-
-
 }
-
