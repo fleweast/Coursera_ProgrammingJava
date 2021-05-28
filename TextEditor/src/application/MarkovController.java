@@ -22,11 +22,6 @@ public class MarkovController {
 	@FXML
 	private void initialize() {
 	}
-	
-	/**
-     * Sets the stage of this dialog.
-     * @param dialogStage
-     */
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }

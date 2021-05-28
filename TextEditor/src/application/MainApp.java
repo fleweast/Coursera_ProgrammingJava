@@ -55,10 +55,7 @@ public class MainApp extends Application {
 		
 		showTextProApp();
 	}
-	
-	/**
-     * Shows the main TextApplication scene
-     */
+
     public void showTextProApp() {
         try {
             // Load the fxml file and set into the center of the main layout
@@ -77,15 +74,7 @@ public class MainApp extends Application {
         }
     }
     
-    
-    
-    // SHOW NEW STAGE METHODS
-    
-    /**
-     * Shows dialog for user input error
-     * 
-     * @param inErr - message to dispaly
-     */
+
     public void showInputErrorDialog(String inErr) {
     	Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle("Error");
@@ -94,13 +83,7 @@ public class MainApp extends Application {
 
 		alert.showAndWait();
     }
-    
-    /**
-     * Displays dialog that allows user to select local text file to display in TextArea
-     * 
-     * @param ta - reference to TextArea to display loaded text file
-     * 
-     */
+
     public void showLoadFileDialog(AutoSpellingTextArea ta) {
     	try {
     		// Load the fxml file and create a new stage for the popup
@@ -122,9 +105,6 @@ public class MainApp extends Application {
 
 			// Show the dialog and wait until the user closes it
 		    dialogStage.showAndWait();
-		    
-		    
-		
 
     	} catch (IOException e) {
     		// Exception gets thrown if the fxml file could not be loaded
@@ -146,20 +126,11 @@ public class MainApp extends Application {
 			Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
 
-			// Set reference to stage in controller
 			EditDistanceDialogController controller = loader.getController();
 			controller.setDialogStage(dialogStage);
 			controller.setMainApp(this);
 			controller.setField(selectedText);
-			
-			
-			// give controller reference to scene (cursor)
-
-			// Show the dialog and wait until the user closes it
 		    dialogStage.showAndWait();
-		    
-		    
-		
 
     	} catch (IOException e) {
     		// Exception gets thrown if the fxml file could not be loaded
@@ -248,9 +219,6 @@ public class MainApp extends Application {
 
 			// Show the dialog and wait until the user closes it
 		    dialogStage.showAndWait();
-		    
-		    
-		
 
     	} catch (IOException e) {
     		// Exception gets thrown if the fxml file could not be loaded
@@ -274,9 +242,7 @@ public class MainApp extends Application {
         loadStage.setScene(loadScene);
         loadStage.show();
     }
-    
-    
-    // MAIN
+
 	public static void main(String[] args) {
 		launch(args);
 	}

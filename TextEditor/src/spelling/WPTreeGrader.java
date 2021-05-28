@@ -3,10 +3,6 @@ package spelling;
 import java.io.PrintWriter;
 import java.util.List;
 
-// The specific grader used in this test is called "grader_dict.txt", 
-// which is in the data folder. When submitting your WPTree.java file, 
-// make sure it still points to data/dict.txt.
-
 public class WPTreeGrader {
     public static String printPath(List<String> path) {
         if (path == null) {

@@ -1,9 +1,5 @@
 package document;
 
-/** 
- * A class that represents a text document
- * @author UC San Diego Intermediate Programming MOOC team
- */
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -54,15 +50,7 @@ public abstract class Document {
 		//System.out.println( "found " + numSyllables);
 		return numSyllables;
 	}
-	
-	/** A method for testing
-	 * 
-	 * @param doc The Document object to test
-	 * @param syllables The expected number of syllables
-	 * @param words The expected number of words
-	 * @param sentences The expected number of sentences
-	 * @return true if the test case passed.  False otherwise.
-	 */
+
 	public static boolean testCase(Document doc, int syllables, int words, int sentences)
 	{
 		System.out.println("Testing text: ");

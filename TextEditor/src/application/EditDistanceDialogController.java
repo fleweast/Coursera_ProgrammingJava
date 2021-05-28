@@ -26,11 +26,7 @@ public class EditDistanceDialogController {
 	private void initialize() {
        okButton.setDefaultButton(true);
 	}
-	
-	/**
-     * Sets the stage of this dialog.
-     * @param dialogStage
-     */
+
     public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
@@ -38,11 +34,7 @@ public class EditDistanceDialogController {
     public void setField(String text) {
         word1.setText(text);
     }
-    
-    
-    /**
-     * Called when the user clicks ok.
-     */
+
     @FXML
     private void handleOk() {
         if(isInputValid()) {
@@ -91,13 +83,7 @@ public class EditDistanceDialogController {
     	}
             
     }
-    
-    /**
-     * Is called by the main application to give a reference back to itself.
-     * 
-     * 
-     * @param mainApp
-     */
+
 	public void setMainApp(MainApp mainApp) {
 		this.mainApp = mainApp;
 	}

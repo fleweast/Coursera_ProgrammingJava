@@ -5,16 +5,8 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/** 
- * A naive implementation of the Document abstract class. 
- * @author UC San Diego Intermediate Programming MOOC team
- */
 public class BasicDocument extends Document 
 {
-	/** Create a new BasicDocument object
-	 * 
-	 * @param text The full text of the Document.
-	 */
 	public BasicDocument(String text)
 	{
 		super(text);
@@ -44,26 +36,6 @@ public class BasicDocument extends Document
 		return countAllSylables;
 	}
 
-	/*protected int countSyllables(String word)
-	{
-		int count = 0;
-		word = word.toLowerCase();
-
-		if (word.charAt(word.length()-1) == 'e') {
-			if (silente(word)){
-				String newword = word.substring(0, word.length()-1);
-				count = count + countit(newword);
-			} else {
-				count++;
-			}
-		} else {
-			count = count + countit(word);
-		}
-		return count;
-	}
-
-	 */
-
 	private int countit(String word) {
 		int count = 0;
 		Pattern splitter = Pattern.compile("[^aeiouy]*[aeiouy]+");
@@ -85,10 +57,7 @@ public class BasicDocument extends Document
 			return true;
 		} else return false;
 	}
-	
-	
-	/* The main method for testing this class. 
-	 * You are encouraged to add your own tests.  */
+
 	public static void main(String[] args)
 	{
 		testCase(new BasicDocument("This is a test.  How many???  "

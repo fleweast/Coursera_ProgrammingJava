@@ -1,6 +1,5 @@
 package spelling;
 
-import java.util.Locale;
 import java.util.TreeSet;
 
 public class DictionaryBST implements Dictionary 

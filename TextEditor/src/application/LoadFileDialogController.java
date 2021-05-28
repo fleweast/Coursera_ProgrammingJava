@@ -31,19 +31,10 @@ public class LoadFileDialogController {
 	private void initialize() {
 		
 	}
-	
-	/**
-     * Sets the stage of this dialog.
-     * @param dialogStage
-     */
 	public void setDialogStage(Stage dialogStage) {
         this.dialogStage = dialogStage;
     }
-	
-	/**
-	 * Sets reference to TextArea
-	 * 
-	 */
+
 	public void setTextArea(AutoSpellingTextArea textBox) {
 		this.textBox = textBox;
 	}

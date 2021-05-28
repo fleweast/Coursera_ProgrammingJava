@@ -10,10 +10,6 @@ import java.util.LinkedList;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
- * @author UC San Diego MOOC team
- *
- */
 public class DictionaryBSTTester {
 
 	private String dictFile = "data/words.small.txt"; 
@@ -21,10 +17,7 @@ public class DictionaryBSTTester {
 	DictionaryBST emptyDict; 
 	DictionaryBST smallDict;
 	DictionaryBST largeDict;
-	
-	/**
-	 * @throws java.lang.Exception
-	 */
+
 	@Before
 	public void setUp() throws Exception 
 	{
@@ -41,9 +34,6 @@ public class DictionaryBSTTester {
 		DictionaryLoader.loadDictionary(largeDict, dictFile);
 	}
 
-	
-	/** Test if the size method is working correctly.
-	 */
 	@Test
 	public void testSize()
 	{
@@ -51,8 +41,7 @@ public class DictionaryBSTTester {
 		assertEquals("Testing size for small dict", 4, smallDict.size());
 		assertEquals("Testing size for large dict", 4438, largeDict.size());
 	}
-	
-	/** Test the isWord method */
+
 	@Test
 	public void testIsWord()
 	{
@@ -75,16 +64,13 @@ public class DictionaryBSTTester {
 		
 		assertEquals("Testing isWord on small: subsequent", true, smallDict.isWord("subsequent"));
 		assertEquals("Testing isWord on large: subsequent", true, largeDict.isWord("subsequent"));
-		
-		
+
 	}
-	
-	/** Test the addWord method */
+
 	@Test
 	public void addWord()
 	{
-		
-		
+
 		assertEquals("Asserting hellow is not in empty dict", false, emptyDict.isWord("hellow"));
 		assertEquals("Asserting hellow is not in small dict", false, smallDict.isWord("hellow"));
 		assertEquals("Asserting hellow is not in large dict", false, largeDict.isWord("hellow"));
@@ -120,10 +106,5 @@ public class DictionaryBSTTester {
 		
 		assertEquals("Testing isWord on small: subsequent", true, smallDict.isWord("subsequent"));
 		assertEquals("Testing isWord on large: subsequent", true, largeDict.isWord("subsequent"));
-		
-		
-	}	
-	
-	
-	
+	}
 }
